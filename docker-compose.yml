@@ -18,3 +18,13 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: password
+
+  node:
+    image:
+    restart: always
+    ports:
+      - 4000:4000
+    volumes:
+      - "./app:/app"
+    working_dir: "/app"
+    command: ["node hello.js"]
