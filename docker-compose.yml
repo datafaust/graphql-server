@@ -20,7 +20,7 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: password
 
   node:
-    image:
+    image: node
     restart: always
     ports:
       - 4000:4000
