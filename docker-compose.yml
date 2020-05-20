@@ -5,6 +5,7 @@ services:
 
   mongo:
     image: mongo
+    container_name: mongodb
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
@@ -12,6 +13,7 @@ services:
 
   mongo-express:
     image: mongo-express
+    container_name: mongoexpress
     restart: always
     ports:
       - 8081:8081
@@ -21,10 +23,11 @@ services:
 
   node:
     image: node
+    container_name: graphqlapi
     restart: always
     ports:
       - 4000:4000
     volumes:
       - "./app:/app"
-    working_dir: "/app"
+    working_dir: "./app"
     command: ["node hello.js"]
